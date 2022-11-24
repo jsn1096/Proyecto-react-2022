@@ -1,0 +1,17 @@
+h1 {
+  color: blueviolet;
+}
+
+.item {
+  border: 1px solid black;
+  color: rgb(29, 6, 6);
+  padding: 3px;
+}
+
+table {
+  width: 100%
+}
+
+table, th, td {
+  border: 1px solid black;
+}

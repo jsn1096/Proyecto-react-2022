@@ -1,29 +1,12 @@
-import { useEffect, useState } from "react"
-import axios from "axios"
+import "./App.css"
+import Cripto from "./Cripto"
 
 function App() {
-
-  const API_URL =  import.meta.env.VITE_API_URL
-
-  const [criptos, setCriptos] = useState()
-
-  useEffect(() => {
-    axios.get(`${API_URL}assets`)
-      .then((res) => setCriptos(res.data.data))
-      .catch(() => {console.error('la petición falló')})
-  }, [])
-
-  if (!criptos) return <span>Cargando...</span>
 
   return (
     <>
     <h1>Lista de criptomonedas</h1>
-    <ol>
-      { 
-        criptos.map( ({ id, name, priceUsd}) => 
-        <li key={id}>Nombre: {name}, Precio: {priceUsd}</li> )
-      }
-    </ol>
+      <Cripto />
     </>
   )
 }
