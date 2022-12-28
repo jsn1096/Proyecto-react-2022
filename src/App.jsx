@@ -1,30 +1,16 @@
-import { useEffect, useState } from "react"
-import axios from "axios"
+import { Outlet, Navigate } from "react-router-dom"
+import Menu from "./components/menu/Menu"
+import './App.css'
 
-function App() {
+const App = () => {
 
-  const API_URL =  import.meta.env.VITE_API_URL
-
-  const [criptos, setCriptos] = useState()
-
-  useEffect(() => {
-    axios.get(`${API_URL}assets`)
-      .then((res) => setCriptos(res.data.data))
-      .catch(() => {console.error('la petición falló')})
-  }, [])
-
-  if (!criptos) return <span>Cargando...</span>
+  if (!localStorage.getItem('tokenEDmarket')) return <Navigate to='/login' />
 
   return (
-    <>
-    <h1>Lista de criptomonedas</h1>
-    <ol>
-      { 
-        criptos.map( ({ id, name, priceUsd}) => 
-        <li key={id}>Nombre: {name}, Precio: {priceUsd}</li> )
-      }
-    </ol>
-    </>
+    <div className="app-container">
+      <Menu />
+      <Outlet />
+    </div>
   )
 }
 

@@ -1,0 +1,35 @@
+.login-container {
+  width: 400px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 1rem;
+  padding-top: 100px;
+  margin-top: 100px;
+  text-align: center;
+}
+label {
+  padding-right: 1rem;
+}
+
+
+.login-container h1 {
+  text-align: center;
+}
+
+.field {
+  padding-top: 1rem;
+}
+
+.submit {
+  margin-top: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.error {
+  background: tomato;
+  line-height: 3;
+  border-radius: 0.5rem;
+  padding: 0.1rem;
+}
